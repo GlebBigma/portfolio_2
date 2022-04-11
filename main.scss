@@ -16,6 +16,37 @@ body {
   background: $bg-body;
 }
 
+.patriotic-wrapper {
+  position: fixed;
+  top: -20px;
+  right: -92px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transform: rotate(45deg);
+
+  .ukrainian-flag {
+    width: 270px;
+    height: 100px;
+    margin-bottom: 4px;
+  }
+
+  span {
+    font-size: 20px;
+
+    &:first-child {
+      color: #005bbc;
+    }
+
+    &:last-child {
+      color: #ffd700;
+    }
+  }
+}
+
 .mouse {
   width: 20px;
   height: 30px;
