@@ -12,6 +12,10 @@ $color-secondary: #13A8FE;
 
 $base-transition: all 0.3s ease-in-out;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: $bg-body;
 }
