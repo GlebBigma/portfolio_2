@@ -7,11 +7,11 @@ $bg-border: #888888;
 
 $color-light: #FFFFFF;
 $color-default: #888888;
-//$color-secondary: #9013FE;
 $color-secondary: #13A8FE;
 
 $base-transition: all 0.3s ease-in-out;
 
+// General styles
 html {
   scroll-behavior: smooth;
 }
@@ -31,6 +31,8 @@ body {
   justify-content: center;
 
   transform: rotate(45deg);
+
+  z-index: 1;
 
   .ukrainian-flag {
     width: 270px;
@@ -95,6 +97,17 @@ body {
   }
 }
 
+.list-bullet {
+  content: '';
+
+  width: 8px;
+  height: 8px;
+
+  position: absolute;
+
+  background-color: $color-secondary;
+}
+
 .app-layout {
   width: 100%;
 
@@ -137,7 +150,7 @@ body {
       }
 
       h2 {
-
+        margin: 0 0 40px;
         text-transform: uppercase;
         font-family: $font-montserrat;
         font-weight: 900;
@@ -240,6 +253,7 @@ body {
   }
 }
 
+// Sections
 .intro {
   height: 100vh;
   padding: 0 !important;
@@ -267,5 +281,164 @@ body {
   .mouse {
     position: absolute;
     bottom: 54px;
+  }
+}
+
+.skills {
+  ul {
+    padding: 0;
+    margin: 0 0 -20px;
+
+    list-style-type: none;
+    columns: 2;
+
+    li {
+      padding-left: 20px;
+      margin-bottom: 20px;
+
+      position: relative;
+
+      line-height: 1.5;
+      font-family: $font-lato;
+      font-size: 16px;
+      color: $color-default;
+
+      &:before {
+        @extend .list-bullet;
+
+        top: 8px;
+        left: -3.5px;
+      }
+    }
+  }
+}
+
+.experience {
+  &__item-wrapper {
+    display: flex;
+  }
+
+  &__item-column {
+    width: 50%;
+
+    .title {
+      margin: 0 0 40px;
+
+      line-height: 1.5;
+      text-transform: uppercase;
+      font-family: $font-montserrat;
+      font-weight: 700;
+      font-size: 18px;
+      color: $color-light;
+    }
+  }
+
+  &__item {
+    padding-left: 20px;
+    margin-bottom: 40px;
+
+    position: relative;
+
+    &:before {
+      @extend .list-bullet;
+
+      top: 4px;
+      left: -3.5px;
+
+      z-index: 1;
+    }
+
+    &:after {
+      content: '';
+
+      width: 1px;
+      height: calc(100% + 40px);
+
+      position: absolute;
+      top: 4px;
+      left: 0;
+
+      background-color: $bg-border;
+    }
+  }
+
+  &__item-title {
+    margin: 20px 0;
+
+    line-height: 1.5;
+    font-family: $font-montserrat;
+    font-weight: 700;
+    font-size: 18px;
+    color: $color-light;
+  }
+
+  &__item-subtitle {
+    font-family: $font-lato;
+    font-size: 14px;
+    color: $color-default;
+  }
+
+  &__item-content {
+    line-height: 1.5;
+    font-family: $font-lato;
+    font-size: 16px;
+    color: $color-default;
+  }
+}
+
+.contacts {
+  &__item-wrapper {
+    display: flex;
+  }
+
+  &__item {
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+      @extend .contacts__item;
+      
+      width: auto;
+
+      text-decoration: none;
+
+      span {
+        transition: $base-transition;
+      }
+
+      &:hover {
+        span {
+          color: $color-secondary !important;
+        }
+      }
+
+      img {
+        width: 50px;
+        height: 50px;
+      }
+
+      span {
+        color: red;
+
+        &:first-of-type {
+          margin: 20px 0;
+
+          line-height: 1.5;
+          font-family: $font-montserrat;
+          font-weight: 700;
+          font-size: 18px;
+          color: $color-light;
+        }
+
+        &:last-of-type {
+          font-family: $font-lato;
+          font-size: 14px;
+          color: $color-default;
+        }
+      }
+    }
   }
 }
