@@ -1,3 +1,5 @@
+@import "mixins";
+
 // Variables
 $font-montserrat: 'Montserrat', sans-serif;
 $font-lato: 'Lato', sans-serif;
@@ -6,18 +8,24 @@ $bg-body: #000000;
 $bg-border: #888888;
 
 $color-light: #FFFFFF;
+$color-dark: #000000;
 $color-default: #888888;
 $color-secondary: #13A8FE;
 
 $base-transition: all 0.3s ease-in-out;
+$filter-transition: filter 0.3s ease-in-out;
 
 // General styles
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   background: $bg-body;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.blurred {
+  filter: blur(10px);
 }
 
 .patriotic-wrapper {
@@ -31,6 +39,7 @@ body {
   justify-content: center;
 
   transform: rotate(45deg);
+  transition: $filter-transition;
 
   z-index: 1;
 
@@ -38,6 +47,10 @@ body {
     width: 270px;
     height: 100px;
     margin-bottom: 4px;
+
+    @include media($until: md) {
+      height: 80px;
+    }
 
     div {
       &:first-child {
@@ -78,7 +91,17 @@ body {
   border: 2px solid $color-light;
   border-radius: 20px;
 
-  &::before {
+  transition: $base-transition;
+
+  &:hover {
+    border-color: $color-secondary;
+
+    &:before {
+      background-color: $color-secondary;
+    }
+  }
+
+  &:before {
     content: '';
 
     width: 6px;
@@ -93,6 +116,7 @@ body {
     opacity: 1;
 
     transform: translateX(-50%);
+    transition: $base-transition;
 
     animation: wheel 2s infinite;
     -webkit-animation: wheel 2s infinite;
@@ -152,14 +176,101 @@ body {
 
     font-family: $font-montserrat;
     color: $color-light;
+
+    @include media($until: md) {
+      left: -300px;
+
+      z-index: 1;
+
+      background-color: $color-dark;
+
+      transition: $base-transition;
+
+      &.active {
+        left: 0;
+      }
+    }
+
+    .btn-burger {
+      height: 20px;
+      width: 20px;
+
+      position: fixed;
+      top: 30px;
+      left: 30px;
+
+      display: none;
+
+      background: none;
+
+      @include media($until: md) {
+        display: block;
+      }
+
+      &:before,
+      &:after {
+        content: "";
+
+        width: 100%;
+        height: 2px;
+
+        left: 0;
+
+        background: $color-light;
+        backface-visibility: hidden;
+
+        transition: 0.75s;
+      }
+
+      &:before {
+        position: absolute;
+        top: 0;
+
+        box-shadow: $color-light 0 9px 0 0;
+      }
+
+      &:after {
+        position: absolute;
+        top: calc(100% - 2px);
+      }
+
+      &.active {
+        &:before {
+          top: 50%;
+
+          box-shadow: transparent 0 0 0 0;
+
+          transform: rotate(225deg);
+        }
+
+        &:after {
+          top: 50%;
+
+          transform: rotate(315deg);
+        }
+      }
+    }
   }
 
   &__main-content {
     width: calc(100% - 240px);
     margin-left: 300px;
 
+    transition: $filter-transition;
+
+    @include media($until: md) {
+      width: 100%;
+      margin-left: 0;
+    }
+
     section {
       padding: 80px 100px;
+
+      box-sizing: border-box;
+
+      @include media($until: md) {
+        padding: 30px;
+      }
 
       &:not(:last-child) {
         border-bottom: 1px solid $bg-border;
@@ -271,8 +382,7 @@ body {
 
 // Sections
 .intro {
-  height: 100vh;
-  padding: 0 !important;
+  height: calc(100vh + 1px);
 
   position: relative;
 
@@ -303,10 +413,18 @@ body {
 .skills {
   ul {
     padding: 0;
-    margin: 0 0 -20px;
+    margin: 0;
 
     list-style-type: none;
     columns: 2;
+
+    @include media($until: sm) {
+      columns: 1;
+    }
+
+    @include media($until: md) {
+      margin-bottom: 0;
+    }
 
     li {
       padding-left: 20px;
@@ -332,10 +450,22 @@ body {
 .experience {
   &__item-wrapper {
     display: flex;
+
+    @include media($until: lg) {
+      flex-direction: column;
+    }
   }
 
   &__item-column {
     width: 50%;
+
+    @include media($until: lg) {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+    }
 
     .title {
       margin: 0 0 40px;
@@ -405,6 +535,11 @@ body {
 .contacts {
   &__item-wrapper {
     display: flex;
+
+    @include media($until: md) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__item {
@@ -413,6 +548,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include media($until: md) {
+      width: 100%;
+
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+    }
 
     a {
       @extend .contacts__item;

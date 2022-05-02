@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="app-layout">
-    <div class="patriotic-wrapper">
+    <div id="patrioticWrapper" class="patriotic-wrapper">
         <div class="patriotic-wrapper__ukrainian-flag">
             <div></div>
             <div></div>
@@ -22,16 +22,17 @@
             <span>Україні!</span>
         </div>
     </div>
-    <div class="app-layout__sidebar">
+    <div id="sidebar" class="app-layout__sidebar">
+        <div id="btn-burger" class="btn-burger"></div>
         <div>
             <img class="sidebar__avatar" src="assets/avatar.jpg" alt="Avatar Gleb Bigma" width="140" height="140">
             <h2 class="sidebar__title">Gleb Bigma</h2>
             <nav class="sidebar__nav">
                 <ul>
-                    <li><a href="#intro" class="scrollTo">Intro</a></li>
-                    <li><a href="#skills" class="scrollTo">Skills</a></li>
-                    <li><a href="#experience" class="scrollTo">Experience</a></li>
-                    <li><a href="#contacts" class="scrollTo">Contacts</a></li>
+                    <li><a href="#intro" class="sidebar__nav-link scrollTo">Intro</a></li>
+                    <li><a href="#skills" class="sidebar__nav-link scrollTo">Skills</a></li>
+                    <li><a href="#experience" class="sidebar__nav-link scrollTo">Experience</a></li>
+                    <li><a href="#contacts" class="sidebar__nav-link scrollTo">Contacts</a></li>
                 </ul>
             </nav>
         </div>
@@ -73,7 +74,7 @@
             <div class="sidebar__copyright">@ 2022 Gleb Bigma</div>
         </div>
     </div>
-    <main class="app-layout__main-content">
+    <main id="mainContent" class="app-layout__main-content">
         <section id="intro" class="intro">
             <div class="intro__content">
                 <h2>Hello!</h2>
@@ -82,7 +83,7 @@
                     customization, also I'm good at React.
                 </p>
             </div>
-            <div class="mouse"></div>
+            <a href="#skills" class="mouse scrollTo"></a>
         </section>
         <section id="skills" class="skills">
             <h2>Skills</h2>
