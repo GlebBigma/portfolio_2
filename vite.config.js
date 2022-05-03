@@ -5,5 +5,9 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-    base: '/portfolio_2/'
+    base: '/portfolio_2/',
+    root: 'src',
+    build: {
+        outDir: '../dist'
+    }
 })
