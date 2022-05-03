@@ -2,6 +2,8 @@ import './main.scss';
 import './mixins.scss'
 import 'normalize.css/normalize.css';
 
+window.onload = () => console.log('РУССКИЙ ВОЕННЫЙ КОРАБЛЬ ИДИ НАХ*Й');
+
 // Scroll to anchor
 document.querySelectorAll('a.scrollTo[href^="#"]')
     .forEach(target =>
@@ -34,7 +36,18 @@ const closeSidebar = () => sidebar.classList.contains('active') && toggleSidebar
 
 mainContent.addEventListener('click', closeSidebar, false);
 
-// Close sidebar on sidebar link click
+// // Close sidebar on sidebar link click
 const sidebarNavs = document.querySelectorAll('.sidebar__nav-link');
 
 sidebarNavs.forEach(item => item.addEventListener('click', closeSidebar, false));
+
+// TODO: May be for future
+// Style sidebar link and close sidebar on sidebar link click
+// const onSidebarLinkClick = event => {
+//     sidebarNavs.forEach(item => item.classList.remove('active'));
+//     event.target.classList.add('active');
+//
+//     sidebar.classList.contains('active') && toggleSidebar();
+// };
+//
+// sidebarNavs.forEach(item => item.addEventListener('click', onSidebarLinkClick, false));

@@ -207,6 +207,10 @@ body {
         display: block;
       }
 
+      &:hover {
+        cursor: pointer;
+      }
+
       &:before,
       &:after {
         content: "";
@@ -326,6 +330,8 @@ body {
           font-size: 14px;
           color: $color-light;
 
+          // TODO: May be for future
+          //&.active,
           &:hover {
             &:after {
               height: 4px;
@@ -481,6 +487,7 @@ body {
 
   &__item {
     padding-left: 20px;
+    padding-right: 20px;
     margin-bottom: 40px;
 
     position: relative;
