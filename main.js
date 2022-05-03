@@ -1,4 +1,4 @@
-import './main.scss';
+import './style.scss';
 import './mixins.scss'
 import 'normalize.css/normalize.css';
 
