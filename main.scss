@@ -45,6 +45,12 @@ body {
 
   text-decoration: none;
 
+  &:hover {
+    .patriotic-greeting.hidden {
+      opacity: 1;
+    }
+  }
+
   &__ukrainian-flag {
     width: 270px;
     height: 100px;
@@ -71,15 +77,23 @@ body {
     }
   }
 
-  span {
-    font-size: 20px;
+  .patriotic-greeting {
+    span {
+      font-size: 20px;
 
-    &:first-child {
-      color: #005bbc;
+      &:first-child {
+        color: #005bbc;
+      }
+
+      &:last-child {
+        color: #ffd700;
+      }
     }
 
-    &:last-child {
-      color: #ffd700;
+    &.hidden {
+      opacity: 0;
+
+      transition: $base-transition;
     }
   }
 }
