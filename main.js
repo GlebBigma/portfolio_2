@@ -2,14 +2,12 @@ import './main.scss';
 import './mixins.scss'
 import 'normalize.css/normalize.css';
 
-function resetHeight(){
-    // reset the body height to that of the inner browser
-    document.body.style.height = window.innerHeight + "px";
+const appHeight = () => {
+    const doc = document.documentElement
+    doc.style.setProperty('--app-height', `${window.innerHeight}px`)
 }
-// reset the height whenever the window's resized
-window.addEventListener("resize", resetHeight);
-// called to initially set the height.
-resetHeight();
+window.addEventListener('resize', appHeight)
+appHeight()
 
 // Remove loader and add .log, after page loaded
 window.addEventListener('load', function () {

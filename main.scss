@@ -19,6 +19,20 @@ $base-transition: all 0.3s ease-in-out;
 $filter-transition: filter 0.3s ease-in-out;
 
 // General styles
+:root {
+  --app-height: 100%;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  height: var(--app-height);
+}
+
 body {
   background: $bg-body;
 }
