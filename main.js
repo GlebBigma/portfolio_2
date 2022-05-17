@@ -2,6 +2,14 @@ import './main.scss';
 import './mixins.scss'
 import 'normalize.css/normalize.css';
 
+// Remove loader and add .log, after page loaded
+window.addEventListener('load', function () {
+    document.getElementById('loader-wrapper').classList.add('hidden');
+
+    console.log('РУССКИЙ ВОЕННЫЙ КОРАБЛЬ, ИДИ НА Х*Й');
+    console.log('RUSSIAN WARSHIP, GO F*CK YOURSELF');
+});
+
 // Scroll to anchor
 document.querySelectorAll('a.scrollTo[href^="#"]')
     .forEach(target =>

@@ -40,11 +40,14 @@ body {
   left: 0;
 
   z-index: 2;
-  opacity: 1;
 
   background-color: $bg-body;
 
-  transition: $base-transition;
+  &.hidden {
+    opacity: 0;
+
+    transition: $base-transition;
+  }
 
   @keyframes rotateLoader {
     0% {
