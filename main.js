@@ -3,7 +3,7 @@ import './mixins.scss'
 import 'normalize.css/normalize.css';
 
 // Remove loader and add .log, after page loaded
-window.addEventListener('load', function () {
+window.addEventListener('load', () => {
     document.getElementById('loader-wrapper').classList.add('hidden');
 
     console.log('РУССКИЙ ВОЕННЫЙ КОРАБЛЬ, ИДИ НА Х*Й');
@@ -20,32 +20,34 @@ document.querySelectorAll('a.scrollTo[href^="#"]')
         })
     );
 
-// Toggle sidebar on mobile and tablet
 const body = document.body;
 const burger = document.getElementById('btn-burger');
 const sidebar = document.getElementById('sidebar');
 const patrioticWrapper = document.getElementById('patrioticWrapper');
 const mainContent = document.getElementById('mainContent');
+const sidebarNavs = document.querySelectorAll('.sidebar__nav-link');
 
+// Toggle sidebar on mobile and tablet
 const toggleSidebar = () => {
     body.classList.toggle('overflow-hidden')
     burger.classList.toggle('active');
     sidebar.classList.toggle('active');
     patrioticWrapper.classList.toggle('blurred');
     mainContent.classList.toggle('blurred');
+
+    mainContent.addEventListener('click', closeSidebar, false);
+    sidebarNavs.forEach(item => item.addEventListener('click', closeSidebar, false));
 };
 
 burger.addEventListener('click', toggleSidebar, false);
 
 // Close sidebar on mobile and tablet on main content click
-const closeSidebar = () => sidebar.classList.contains('active') && toggleSidebar();
+const closeSidebar = () => {
+    sidebar.classList.contains('active') && toggleSidebar();
 
-mainContent.addEventListener('click', closeSidebar, false);
-
-// // Close sidebar on sidebar link click
-const sidebarNavs = document.querySelectorAll('.sidebar__nav-link');
-
-sidebarNavs.forEach(item => item.addEventListener('click', closeSidebar, false));
+    mainContent.removeEventListener('click', closeSidebar, false);
+    sidebarNavs.forEach(item => item.removeEventListener('click', closeSidebar, false));
+};
 
 // TODO: May be for future
 // Style sidebar link and close sidebar on sidebar link click
