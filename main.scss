@@ -276,7 +276,7 @@ body {
       width: 20px;
 
       position: fixed;
-      top: 30px;
+      top: 130px;
       left: 30px;
 
       display: none;
@@ -468,10 +468,7 @@ body {
 
 // Sections
 .intro {
-  //height: calc(100vh + 1px);
-
-  height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  height: calc(100vh + 1px);
 
   position: relative;
 

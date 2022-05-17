@@ -2,14 +2,6 @@ import './main.scss';
 import './mixins.scss'
 import 'normalize.css/normalize.css';
 
-const setVh = () => {
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
-};
-
-window.addEventListener('load', setVh);
-window.addEventListener('resize', setVh);
-
 // Remove loader and add .log, after page loaded
 window.addEventListener('load', function () {
     document.getElementById('loader-wrapper').classList.add('hidden');
