@@ -19,6 +19,8 @@ $base-transition: all 0.3s ease-in-out;
 $filter-transition: filter 0.3s ease-in-out;
 
 // General styles
+html, body { height: 100%; }
+
 body {
   background: $bg-body;
 }
@@ -468,7 +470,6 @@ body {
 
 // Sections
 .intro {
-  min-height: calc(100vh + 1px);
   height: calc(100vh + 1px);
 
   position: relative;
