@@ -2,13 +2,6 @@ import './main.scss';
 import './mixins.scss'
 import 'normalize.css/normalize.css';
 
-const appHeight = () => {
-    const doc = document.documentElement
-    doc.style.setProperty('--app-height', `${window.innerHeight}px`)
-}
-window.addEventListener('resize', appHeight)
-appHeight()
-
 // Remove loader and add .log, after page loaded
 window.addEventListener('load', function () {
     document.getElementById('loader-wrapper').classList.add('hidden');
