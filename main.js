@@ -2,6 +2,26 @@ import './main.scss';
 import './mixins.scss'
 import 'normalize.css/normalize.css';
 
+
+const ages = [12, 45, 34, 23, 9];
+const users = [];
+
+const task4 = () => {
+    console.log('START FUNC');
+
+    for (let i = 0; i < ages.length; i++) {
+        users.push({
+            age: ages[i],
+            isPermitted: ages[i] > 18
+        })
+    }
+
+    console.log('USERS > ', users);
+};
+
+task4();
+
+
 // Remove loader and add .log, after page loaded
 window.addEventListener('load', () => {
     document.getElementById('loader-wrapper').classList.add('hidden');

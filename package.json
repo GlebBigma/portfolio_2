@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && postcss docs/assets/*.css --use autoprefixer --replace",
+    "build": "vite build && postcss docsvite/assets/*.css --use autoprefixer --replace",
     "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d docs"
   },
   "browserslist": [
     "defaults",
