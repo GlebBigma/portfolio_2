@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && postcss docsvite/assets/*.css --use autoprefixer --replace",
+    "build": "vite build",
     "preview": "vite preview",
     "deploy": "npm run build && gh-pages -d docs"
   },
@@ -18,7 +18,7 @@
     "postcss": "^8.4.13",
     "postcss-cli": "^9.1.0",
     "sass": "^1.50.0",
-    "vite": "^2.9.0"
+    "vite": "^4.4.8"
   },
   "dependencies": {
     "normalize.css": "^8.0.1"
