@@ -1,5 +1,5 @@
-@import "mixins";
-@import "fonts/stylesheet.css";
+@import 'mixins';
+@import 'fonts/stylesheet.css';
 
 // Variables
 $font-montserrat: 'Montserrat', sans-serif;
@@ -8,11 +8,11 @@ $font-lato: 'Lato', sans-serif;
 $bg-body: #000000;
 $bg-border: #888888;
 
-$color-light: #FFFFFF;
+$color-light: #ffffff;
 $color-dark: #000000;
 $color-default: #888888;
-$color-secondary: #13A8FE;
-$color-patriotic-blue: #005BBC;
+$color-secondary: #13a8fe;
+$color-patriotic-blue: #005bbc;
 $color-patriotic-yellow: #ffd700;
 
 $base-transition: all 0.3s ease-in-out;
@@ -339,7 +339,7 @@ body {
 
   &:before,
   &:after {
-    content: "";
+    content: '';
 
     width: 100%;
     height: 2px;
@@ -440,7 +440,7 @@ body {
   }
 
   &__social {
-    margin: 20px  0;
+    margin: 20px 0;
 
     a {
       text-decoration: none;
@@ -594,6 +594,26 @@ body {
       left: 0;
 
       background-color: $bg-border;
+    }
+
+    &__info {
+      margin: 12px 0;
+      display: flex;
+
+      .info-title {
+        margin-right: 8px;
+        line-height: 1.5;
+        font-family: $font-lato;
+        font-size: 16px;
+        color: $color-light;
+      }
+
+      .info-value {
+        line-height: 1.5;
+        font-family: $font-lato;
+        font-size: 16px;
+        color: $color-default;
+      }
     }
   }
 
