@@ -1,0 +1,13 @@
+mixin educationItem(subtitle, title, content)
+  .experience__item
+    .experience__item-subtitle= subtitle
+    .experience__item-title= title
+    .experience__item-content= content
+
+section#education.experience
+  h2 Education
+  .experience__item-wrapper
+    .experience__item-column
+      +educationItem('2017 - 2019', 'National Metallurgical Academy of Ukraine', 'Faculty of Computer Systems, Energy and Automation')
+      +educationItem('2015 - 2017', 'Academician V. Lazaryan Dnipro National University of Railway Transport', 'Faculty of Computer Technology and Systems')
+      +educationItem('2010 - 2014', 'Dneprovsky College of Welding and Electronics named after E. O. Paton', 'Faculty of Computer Systems and Networks Maintenance')

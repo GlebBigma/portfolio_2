@@ -1,88 +1,77 @@
-mixin educationItem(subtitle, title, content)
-  .experience__item
-    .experience__item-subtitle= subtitle
-    .experience__item-title= title
-    .experience__item-content= content
-
-mixin experienceItem(date, title, description, domain, tech, team)
+mixin experienceItem(date, title, description, responsibilities, domain, tech)
   .experience__item
     .experience__item-subtitle= date
     .experience__item-title= title
-    .experience__item-content= description
+    .experience__item__info.description
+      .info-title Description:
+      .info-value= description
+    .experience__item__info.responsibilities
+      .info-title Responsibilities:
+      .info-value= responsibilities
     .experience__item__info 
       .info-title Domain:
       .info-value= domain
     .experience__item__info 
       .info-title Technologies:
       .info-value= tech
-    .experience__item__info 
-      .info-title Project Team Size:
-      .info-value= team
 
 section#experience.experience
   h2 Experience
   .experience__item-wrapper
     .experience__item-column
-      .experience__item-column.title Education:
-      +educationItem('2017 - 2019', 'National Metallurgical Academy of Ukraine', 'Faculty of Computer Systems, Energy and Automation')
-      +educationItem('2015 - 2017', 'Academician V. Lazaryan Dnipro National University of Railway Transport', 'Faculty of Computer Technology and Systems')
-      +educationItem('2010 - 2014', 'Dneprovsky College of Welding and Electronics named after E. O. Paton', 'Faculty of Computer Systems and Networks Maintenance')
-
-    .experience__item-column
-      .experience__item-column.title Work:
       +experienceItem(
-        'August 2023 - until now',
-        'Freelance - Front-End Developer',
-        'Development and support of projects of various complexity and topics, Figma to layout.',
+        'November 2023 - Present',
+        'NDA - Front-End Developer ',
         '-',
-        'HTML (Pug), SCSS, React.JS, JavaScript, TypeScript, Redux, Git, Swagger, Figma',
-        '1 - 7'
+        'Developed a significant portion of a web project using the React.js ecosystem, building new components and enhancing existing ones. Optimized project architecture and code structure for better maintainability and scalability. Worked on REST API integration and contributed to implementing new functionality with the Vue.js ecosystem in a related project.',
+        '-',
+        'HTML, SCSS, React.js, Redux Toolkit, Vue.js, Pinia, Axios, JavaScript, TypeScript, Git, Figma',
       )
       +experienceItem(
-        'January 2023 - July 2023',
+        'January 2023 - October 2023',
         'NDA - Front-End Developer',
         'The platform that focuses on cryptocurrency wallet solutions and services. Oversaw the development of a web application for the leading site of the online store and the admin panel of the online store.',
+        'Developed a web application for an online store using the React.js ecosystem. Developed a web application for the admin panel of an online store using the Vue.js ecosystem. Collaborated effectively with backend developers to integrate APIs into web applications.',
         'Cryptocurrency',
-        'HTML, SCSS, Vue.JS, TypeScript, Vuetify.JS, Git, Swagger, Figma',
-        '3'
+        'HTML, SCSS, React.js, Redux, Vue.js (Composition API), Vuetify 3, Axios, JavaScript, TypeScript, Git, Swagger, Figma',
       )
       +experienceItem(
         'July 2022 - December 2022',
         'AtlasApps - Front-End Developer',
-        'Worked on a web application using React.js to enhance security in institutions by detecting weapons in visitors through AI, based on the results, relayed information to 911. Developed new components, refactored existing ones, and restructured project logic and UI. Communicated regularly with an English-speaking client.',
+        'A security platform that was designed primarily for schools, businesses, and other organizations to enhance emergency response and incident management.',
+        'Using the React.js ecosystem, I developed a web application aimed at improving security in institutions. Refactored the project structure and individual component logic. I developed the interface and logic for new application components. I aligned the application interface with the initial general structure created by designers. I collaborated closely with the team, created tasks, tracked their progress, and prioritized tasks requiring urgent execution. Maintained close cooperation with an English-speaking customer manager.',
         'SaaS, Security',
-        'HTML, SCSS, React.JS, JavaScript, Redux, Git',
-        '3'
+        'HTML, SCSS, React.js, Redux, Axios, JavaScript, ESLint, Git, Figma',
       )
       +experienceItem(
         'May 2020 - January 2022',
         'FireArt Studio - Front-End Developer',
-        'Developed and implemented a behavior recording tool using ReactJS to enhance product performance. Designed and optimized UI components to ensure seamless user interaction and data capture. Collaborated with cross-functional teams to integrate the tool with backend services for real-time data processing. Conducted code reviews and ensured high-quality, maintainable code through best practices. Performed testing and debugging to improve tool functionality and performance.',
+        'A user-behavior analytics tool designed to help businesses understand and optimize how users interact with their websites.',
+        'I developed the main landing page of the product, developed a web application of a behavior recording tool using the ReactJS ecosystem. I developed and optimized user interface components to ensure seamless user interaction and data collection. I collaborated with cross-functional teams to integrate the tool with server services for real-time data processing. Conducted code reviews and ensured high quality, maintainable code through best practices. Performed testing and debugging to improve functionality and performance of the tool.',
         'SaaS, User Analytics',
-        'HTML, SCSS, React.JS, JavaScript, Redux, Redux Saga, Git',
-        '5'
+        'HTML, SCSS, React.JS, JavaScript, Redux, Redux Saga, Gulp, Yeoman, Git',
       )
       +experienceItem(
         'January 2019 - May 2020',
         'BIT.TEAM - Front-End Developer',
+        'A cryptocurrency exchange platform that offers users a secure environment to trade various cryptocurrencies.',
         'Developed services to streamline cryptocurrency workflows. Created new components and maintained an existing project using React.js. Communicated regularly with the customer to align development with project requirements.',
         'Cryptocurrency',
-        'HTML, SCSS, React.JS, JavaScript, Redux, Git',
-        '4'
+        'HTML, SCSS, React.JS, JavaScript, Redux, Git, Swagger, Zeplin',
       )
       +experienceItem(
         'October 2017 - October 2020',
         'HeadWorks - Front-End Developer',
+        'A platform that was designed for event organizers to promote, manage, and sell tickets for events.',
         'Developed websites using HTML, CSS (with preprocessors), JavaScript, and open-source libraries. Built web applications with Angular 2 and React.js and created the company’s main website incorporating CSS animations. Communicated with customers, provided project support, and contributed to the company\'s growth."',
         'SaaS, Events',
-        'HTML, SCSS, Angular 2, React.JS, JavaScript, JQuery, Redux, Git',
-        '20'
+        'JavaScript, jQuery, HTML, React.js, Redux, CSS, SCSS, Angular 2',
       )
       +experienceItem(
         '2015 - 2017',
         'Freelance - Trainee Front-End Developer',
-        'Development of simple websites and landing pages using HTML, CSS + Preprocessors, JavaScript, open source libraries."',
+        '-',
+        'Development of simple websites and landing pages using HTML, CSS + Preprocessors, JavaScript, open source libraries.',
         '-',
         'HTML, CSS, SCSS, JavaScript, JQuery, Git, Figma, Zeplin',
-        '1 - 4'
       )

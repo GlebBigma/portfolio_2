@@ -545,7 +545,7 @@ body {
   }
 
   &__item-column {
-    width: 50%;
+    width: 100%;
 
     @include media($until: lg) {
       width: 100%;
@@ -613,6 +613,11 @@ body {
         font-family: $font-lato;
         font-size: 16px;
         color: $color-default;
+      }
+
+      &.description,
+      &.responsibilities {
+        flex-direction: column;
       }
     }
   }
